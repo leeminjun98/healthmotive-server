@@ -1,7 +1,7 @@
 package com.healthmotiveserver.service;
 
 import java.util.Collections;
-import java.util.Optional;
+
 import com.healthmotiveserver.dto.UserDto;
 import com.healthmotiveserver.entity.Authority;
 import com.healthmotiveserver.entity.User;

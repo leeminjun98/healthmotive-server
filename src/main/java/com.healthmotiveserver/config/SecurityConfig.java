@@ -5,7 +5,6 @@ import com.healthmotiveserver.jwt.JwtAccessDeniedHandler;
 import com.healthmotiveserver.jwt.JwtAuthenticationEntryPoint;
 import com.healthmotiveserver.jwt.TokenProvider;
 
-import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
@@ -58,7 +57,7 @@ public class SecurityConfig {
 
                 .authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
                         .requestMatchers("/api/hello", "/api/authenticate", "/api/signup").permitAll()
-//                        .requestMatchers(PathRequest.toH2Console()).permitAll()
+//                        .requestMatchers(PathRequest.toH2Console()).permitAll()  //이건 h2연결하는거라 뺐음.
                         .anyRequest().authenticated()
                 )
 

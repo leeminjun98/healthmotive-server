@@ -3,9 +3,9 @@ package com.healthmotiveserver.handler;
 import static org.springframework.http.HttpStatus.CONFLICT;
 import static org.springframework.http.HttpStatus.FORBIDDEN;
 
+import com.healthmotiveserver.exception.NotFoundMemberException;
 import com.healthmotiveserver.dto.ErrorDto;
 import com.healthmotiveserver.exception.DuplicateMemberException;
-import com.healthmotiveserver.exception.NotFoundMemberException;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
