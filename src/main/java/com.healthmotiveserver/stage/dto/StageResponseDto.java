@@ -12,7 +12,7 @@ public class StageResponseDto {
 
     private boolean completed;
 
-    public static StageResponseDto from(Stage stage){
+    public static StageResponseDto from(Stage stage){ //
         return StageResponseDto.builder()
                 .stagenumber(stage.getStagenumber())
                 .completed(stage.isCompleted())
