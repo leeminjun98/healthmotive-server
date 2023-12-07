@@ -1,11 +1,13 @@
 package com.healthmotiveserver.stage.service;
 
+//추가
 
 import com.healthmotiveserver.entity.User;
 import com.healthmotiveserver.handler.StageHandler;
 import com.healthmotiveserver.handler.UserHandler;
 import com.healthmotiveserver.repository.UserRepository;
 import com.healthmotiveserver.response.status.ErrorStatus;
+import com.healthmotiveserver.stage.dto.StageRequestDto;
 import com.healthmotiveserver.stage.dto.StageResponseDto;
 import com.healthmotiveserver.stage.entity.Stage;
 import com.healthmotiveserver.stage.repository.StageRepository;
@@ -22,11 +24,11 @@ public class StageService {
     private final StageRepository stageRepository;
     private final UserRepository userRepository;
 
-    public StageResponseDto getStage(StageResponseDto stageResponseDto){
+    public StageResponseDto getStage(StageRequestDto stageRequestDto){
         String username = String.valueOf(SecurityUtil.getCurrentUsername());
         User user = userRepository.findOneWithAuthoritiesByUsername(username)
                 .orElseThrow(()-> new UserHandler(ErrorStatus._UNAUTHORIZED));
-        Stage stage = stageRepository.findByStagenumberandUser(stageResponseDto.getStagenumber()
+        Stage stage = stageRepository.findByStagenumberandUser(stageRequestDto.getStagenumber()
                 ,user).orElseThrow(()-> new StageHandler(ErrorStatus.STAGE_NOT_EXIST));
 
 
